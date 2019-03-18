@@ -9,5 +9,5 @@ export const acquaintance = () => {
 
 export const gameProcess = () => {
   welcome();
-  const name = acquaintance();
+  acquaintance();
 };
