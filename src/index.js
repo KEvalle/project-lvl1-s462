@@ -1,21 +1,21 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from './utils';
 
-export const welcome = () => console.log('Welcome to the Brain Games!');
-export const description = text => console.log(text);
-export const acquaintance = () => {
+const showWelcome = () => console.log('Welcome to the Brain Games!');
+const getDescription = text => console.log(text);
+const getName = () => {
   const actual = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${actual}!`);
   return actual;
 };
-export const getAnswerUser = question => readlineSync.question(`Question:${question}\nYou answer:`);
+const getAnswerUser = question => readlineSync.question(`Question:${question}\nYou answer:`);
 const countQuestion = 3;
 
-const check = (getPair, name) => {
+const playGame = (getQuestionAndAnswer, name) => {
   for (let counter = 1; counter <= countQuestion; counter += 1) {
-    const pairNew = getPair();
-    const answer = getAnswerUser(car(pairNew));
-    const trueAnswer = `${cdr(pairNew)}`;
+    const QuestionAndAnswer = getQuestionAndAnswer();
+    const answer = getAnswerUser(car(QuestionAndAnswer));
+    const trueAnswer = `${cdr(QuestionAndAnswer)}`;
 
     if (answer === trueAnswer) {
       console.log('Correct!');
@@ -28,9 +28,11 @@ const check = (getPair, name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const gameProcess = (textDescription = '', getPair = 'none') => {
-  welcome();
-  description(textDescription);
-  const name = acquaintance();
-  if (getPair !== 'none') check(getPair, name);
+export const gameProcess = (textDescription, getQuestionAndAnswer) => {
+  showWelcome();
+  getDescription(textDescription);
+  const name = getName();
+  playGame(getQuestionAndAnswer, name);
 };
+
+export default gameProcess;
