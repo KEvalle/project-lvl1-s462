@@ -1,7 +1,7 @@
 import { gameProcess } from '..';
 import { getRandomNumber, cons } from '../utils';
 
-const textGameDescription = "Answer 'yes' if number even otherwise answer 'no'.";
+const gameDescription = "Answer 'yes' if number even otherwise answer 'no'.";
 const isEven = question => question % 2 === 0;
 const getTrueAnswer = question => ((isEven(question)) ? 'yes' : 'no');
 
@@ -12,5 +12,5 @@ const getQuestionAndAnswer = () => {
 };
 
 export default () => {
-  gameProcess(textGameDescription, getQuestionAndAnswer);
+  gameProcess(gameDescription, getQuestionAndAnswer);
 };

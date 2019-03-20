@@ -1,7 +1,7 @@
 import { gameProcess } from '..';
 import { getRandomNumber, cons } from '../utils';
 
-const textGameDescription = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 const getOperator = () => {
   const part = getRandomNumber(1, 3);
   switch (part) {
@@ -38,5 +38,5 @@ const getQuestionAndAnswer = () => {
 };
 
 export default () => {
-  gameProcess(textGameDescription, getQuestionAndAnswer);
+  gameProcess(gameDescription, getQuestionAndAnswer);
 };

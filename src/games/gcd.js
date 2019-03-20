@@ -1,7 +1,7 @@
 import { gameProcess } from '..';
 import { getRandomNumber, cons } from '../utils';
 
-const textGameDescription = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 const calculateNOD = (n, m) => {
   if (m > 0) {
     const k = n % m;
@@ -12,10 +12,11 @@ const calculateNOD = (n, m) => {
 const getQuestionAndAnswer = () => {
   const One = getRandomNumber(1, 99);
   const Two = getRandomNumber(1, 99);
+  const question = `${One}:${Two}`;
   const trueAnswer = calculateNOD(One, Two);
-  return cons(`${One}:${Two}`, trueAnswer);
+  return cons(question, trueAnswer);
 };
 
 export default () => {
-  gameProcess(textGameDescription, getQuestionAndAnswer);
+  gameProcess(gameDescription, getQuestionAndAnswer);
 };
