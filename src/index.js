@@ -1,13 +1,6 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from './utils';
 
-const showWelcome = () => console.log('Welcome to the Brain Games!');
-const getDescription = text => console.log(text);
-const getName = () => {
-  const actual = readlineSync.question('May I have your name?: ');
-  console.log(`Hello, ${actual}!`);
-  return actual;
-};
 const getAnswerUser = question => readlineSync.question(`Question:${question}\nYou answer:`);
 const countQuestion = 3;
 
@@ -29,9 +22,10 @@ const playGame = (getQuestionAndAnswer, name) => {
 };
 
 export const gameProcess = (textDescription, getQuestionAndAnswer) => {
-  showWelcome();
-  getDescription(textDescription);
-  const name = getName();
+  console.log('Welcome to the Brain Games!');
+  console.log(textDescription);
+  const name = readlineSync.question('May I have your name?: ');
+  console.log(`Hello, ${name}!`);
   playGame(getQuestionAndAnswer, name);
 };
 
