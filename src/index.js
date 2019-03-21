@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from './utils';
 
-const getAnswerUser = question => readlineSync.question(`Question:${question}\nYou answer:`);
 const countQuestion = 3;
 
 const playGame = (getQuestionAndAnswer, name) => {
   for (let counter = 1; counter <= countQuestion; counter += 1) {
     const QuestionAndAnswer = getQuestionAndAnswer();
-    const answer = getAnswerUser(car(QuestionAndAnswer));
+    const answer = readlineSync.question(`Question:${car(QuestionAndAnswer)}\nYou answer:`);
     const trueAnswer = `${cdr(QuestionAndAnswer)}`;
 
     if (answer === trueAnswer) {
