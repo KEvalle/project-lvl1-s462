@@ -3,10 +3,16 @@ import { car, cdr } from './utils';
 
 const countQuestion = 3;
 
-const playGame = (getQuestionAndAnswer, name) => {
-  for (let counter = 1; counter <= countQuestion; counter += 1) {
+export const gameProcess = (textDescription, getQuestionAndAnswer) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(textDescription);
+  const name = readlineSync.question('May I have your name?: ');
+  console.log(`Hello, ${name}!`);
+
+  for (let i = 1; i <= countQuestion; i += 1) {
     const QuestionAndAnswer = getQuestionAndAnswer();
-    const answer = readlineSync.question(`Question:${car(QuestionAndAnswer)}\nYou answer:`);
+    console.log(`Question:${car(QuestionAndAnswer)}`);
+    const answer = readlineSync.question('You answer:');
     const trueAnswer = `${cdr(QuestionAndAnswer)}`;
 
     if (answer === trueAnswer) {
@@ -18,14 +24,6 @@ const playGame = (getQuestionAndAnswer, name) => {
     }
   }
   console.log(`Congratulations, ${name}!`);
-};
-
-export const gameProcess = (textDescription, getQuestionAndAnswer) => {
-  console.log('Welcome to the Brain Games!');
-  console.log(textDescription);
-  const name = readlineSync.question('May I have your name?: ');
-  console.log(`Hello, ${name}!`);
-  playGame(getQuestionAndAnswer, name);
 };
 
 export default gameProcess;

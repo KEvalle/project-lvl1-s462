@@ -5,18 +5,18 @@ const gameDescription = 'What number is missing in the progression?';
 const lengthProgression = 10;
 
 const getQuestionAndAnswer = () => {
-  let progression = getRandomNumber(1, 20);
+  const startElement = getRandomNumber(1, 20);
   const step = getRandomNumber(1, 20);
-  const indexHide = getRandomNumber(1, 10);
+  const indexHide = getRandomNumber(0, lengthProgression - 1);
   let question = '';
   let trueAnswer;
 
-  for (let counter = 1; counter <= lengthProgression; counter += 1) {
-    if (counter === indexHide) {
-      trueAnswer = progression;
-      question += ' ..';
-    } else question += ` ${progression}`;
-    progression += step;
+  for (let i = 0; i < lengthProgression; i += 1) {
+    const progressionElement = startElement + step * i;
+    if (i === indexHide) {
+      trueAnswer = progressionElement;
+      question = `${question} ..`;
+    } else question = `${question} ${progressionElement}`;
   }
   return cons(question, trueAnswer);
 };
