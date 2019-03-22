@@ -3,22 +3,22 @@ import { car, cdr } from './utils';
 
 const countQuestion = 3;
 
-export const gameProcess = (textDescription, getQuestionAndAnswer) => {
+export const gameProcess = (gameDescription, genGameData) => {
   console.log('Welcome to the Brain Games!');
-  console.log(textDescription);
+  console.log(gameDescription);
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
 
   for (let i = 1; i <= countQuestion; i += 1) {
-    const QuestionAndAnswer = getQuestionAndAnswer();
+    const QuestionAndAnswer = genGameData();
     console.log(`Question:${car(QuestionAndAnswer)}`);
-    const answer = readlineSync.question('You answer:');
+    const userAnswer = readlineSync.question('You answer:');
     const trueAnswer = `${cdr(QuestionAndAnswer)}`;
 
-    if (answer === trueAnswer) {
+    if (userAnswer === trueAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${trueAnswer}.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
