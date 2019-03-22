@@ -17,17 +17,17 @@ Answer "yes" if given number is prime. Otherwise answer "no".
 # Setup
 >sudo npm install -g brain-games2
 
-# Play Brain-even:
+# Play "Brain-even":
 [![asciicast](https://asciinema.org/a/GgM9qXfzg9AKFjXEMD3tC40Yv.svg)](https://asciinema.org/a/GgM9qXfzg9AKFjXEMD3tC40Yv)
 
-# Play Brain-calc:
+# Play "Brain-calc":
 [![asciicast](https://asciinema.org/a/KKiDz58VOZrDyGqms21vPgTM7.svg)](https://asciinema.org/a/KKiDz58VOZrDyGqms21vPgTM7)
 
-# Play Brain-gcd:
+# Play "Brain-gcd":
 [![asciicast](https://asciinema.org/a/njnmyYkVKMA0ocajeVq6prQs1.svg)](https://asciinema.org/a/njnmyYkVKMA0ocajeVq6prQs1)
 
-# Play Brain-progression:
+# Play "Brain-progression":
 [![asciicast](https://asciinema.org/a/t7Cl7AYQDkviGIGqgfa5S3KTF.svg)](https://asciinema.org/a/t7Cl7AYQDkviGIGqgfa5S3KTF)
 
-# Play Brain-prime:
+# Play "Brain-prime":
 [![asciicast](https://asciinema.org/a/BKwEyfOuEdfCISFlBm2b3RPvY.svg)](https://asciinema.org/a/BKwEyfOuEdfCISFlBm2b3RPvY)
