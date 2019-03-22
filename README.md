@@ -1,6 +1,5 @@
 # Welcome to the Brain-games
-Welcome to the Brain-games
-"Brain-games" is my first educational project from Hexlet.
+"Brain-games" is my first educational project from Hexlet.  
 This is a set of terminal games for brain training:
 - **brain-even**
 Answer "yes" if number even otherwise answer "no".
