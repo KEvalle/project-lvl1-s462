@@ -32,5 +32,4 @@ Answer "yes" if given number is prime. Otherwise answer "no".
 # Play "Brain-prime":
 [![asciicast](https://asciinema.org/a/BKwEyfOuEdfCISFlBm2b3RPvY.svg)](https://asciinema.org/a/BKwEyfOuEdfCISFlBm2b3RPvY)
 
--> # Enjoy the game! <-
-
+# Enjoy the game!
