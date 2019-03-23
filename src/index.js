@@ -10,10 +10,10 @@ export const gameProcess = (gameDescription, genGameData) => {
   console.log(`Hello, ${name}!`);
 
   for (let i = 1; i <= countQuestion; i += 1) {
-    const QuestionAndAnswer = genGameData();
-    console.log(`Question:${car(QuestionAndAnswer)}`);
+    const questionAndAnswer = genGameData();
+    console.log(`Question:${car(questionAndAnswer)}`);
     const userAnswer = readlineSync.question('You answer:');
-    const trueAnswer = `${cdr(QuestionAndAnswer)}`;
+    const trueAnswer = `${cdr(questionAndAnswer)}`;
 
     if (userAnswer === trueAnswer) {
       console.log('Correct!');
