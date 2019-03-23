@@ -4,12 +4,12 @@ import { getRandomNumber, cons } from '../utils';
 const gameDescription = "Answer 'yes' if number even otherwise answer 'no'.";
 const isEven = number => number % 2 === 0;
 
-const genGameData = () => {
+const generateGameData = () => {
   const question = getRandomNumber(1, 99);
-  const trueAnswer = ((isEven(question)) ? 'yes' : 'no');
+  const trueAnswer = isEven(question) ? 'yes' : 'no';
   return cons(question, trueAnswer);
 };
 
 export default () => {
-  gameProcess(gameDescription, genGameData);
+  gameProcess(gameDescription, generateGameData);
 };

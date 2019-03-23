@@ -11,7 +11,7 @@ export const gameProcess = (gameDescription, genGameData) => {
 
   for (let i = 1; i <= countQuestion; i += 1) {
     const questionAndAnswer = genGameData();
-    console.log(`Question:${car(questionAndAnswer)}`);
+    console.log(`Question: ${car(questionAndAnswer)}`);
     const userAnswer = readlineSync.question('You answer:');
     const trueAnswer = `${cdr(questionAndAnswer)}`;
 

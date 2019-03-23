@@ -14,12 +14,12 @@ const isPrime = (number) => {
   return true;
 };
 
-const genGameData = () => {
+const generateGameData = () => {
   const question = getRandomNumber(1, 99);
   const trueAnswer = (isPrime(question) ? 'yes' : 'no');
   return cons(question, trueAnswer);
 };
 
 export default () => {
-  gameProcess(gameDescription, genGameData);
+  gameProcess(gameDescription, generateGameData);
 };
